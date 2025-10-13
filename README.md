@@ -1,8 +1,8 @@
-# VisJudgeBench
+# 📊 VisJudgeBench
 
 **VisJudgeBench: Aesthetics and Quality Assessment of Visualizations**
 
-## About VisJudgeBench
+## 🎯 About VisJudgeBench
 
 VisJudgeBench is a comprehensive benchmark dataset for visualization quality assessment based on the **"Fidelity-Expressiveness-Aesthetics"** evaluation framework. We release the complete dataset with **3,090 expert-annotated samples** across three categories (`single_vis`, `multi_vis`, `dashboard`), where each sample includes visualization images, six-dimensional quality scores, and evaluation prompts.
 
@@ -11,7 +11,7 @@ VisJudgeBench is a comprehensive benchmark dataset for visualization quality ass
   <p><em>Why we need specialized visualization assessment: MLLMs excel at general aesthetics but struggle with visualization-specific evaluation</em></p>
 </div>
 
-## Evaluation Framework
+## 🔍 Evaluation Framework
 
 Our benchmark evaluates visualizations across three fundamental dimensions, operationalized into six measurable metrics:
 
@@ -35,7 +35,7 @@ Our benchmark evaluates visualizations across three fundamental dimensions, oper
 - `visual_composition`: Focuses on the rationality of spatial layout, evaluating the balance and order of element positioning, size proportions, and spacing arrangements.
 - `color_harmony`: Assesses the coordination and functionality of color combinations, ensuring color palette choices balance aesthetics with effective information communication.
 
-## Benchmark Construction
+## 🏗️ Benchmark Construction
 
 Our benchmark follows a rigorous three-stage construction pipeline to ensure high-quality annotations:
 
@@ -44,7 +44,7 @@ Our benchmark follows a rigorous three-stage construction pipeline to ensure hig
   <p><em>Three-stage benchmark construction: Data Collection → Evaluation Framework → Expert Annotation</em></p>
 </div>
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```
 VisJudgeBench/
@@ -57,26 +57,22 @@ VisJudgeBench/
     └── dashboard/              # Dashboard-style visualizations
 ```
 
-## Dataset Statistics
+## 📈 Dataset Statistics
 
 Our benchmark contains **3,090 expert-annotated samples** across three main categories and **32 distinct subtypes**:
 
-<div align="center">
+| Category | Samples | Subtypes | All Subtypes (Count) |
+|----------|---------|----------|---------------------|
+| **Single Visualization** | 1,041 | 22 | Bar Chart (176) • Pie Chart (129) • Line Chart (100) • Area Chart (75) • Treemap (62) • Sankey Diagram (61) • Heatmap (55) • Scatter Plot (49) • Histogram (48) • Donut Chart (47) • Funnel Chart (45) • Bubble Chart (29) • Network Graph (28) • Word Cloud (27) • Waterfall Chart (24) • Box Plot (21) • Radar Chart (19) • Gauge Chart (16) • Sunburst Chart (14) • Violin Plot (12) • Parallel Coordinates (10) • Chord Diagram (9) |
+| **Multiple Visualizations** | 1,024 | 5 | Comparison Views (670) • Small Multiples (195) • Coordinated Views (97) • Other Multi View (59) • Overview Detail (3) |
+| **Dashboard** | 1,025 | 5 | Analytical Dashboard (743) • Operational Dashboard (122) • Interactive Dashboard (91) • Strategic Dashboard (62) • Other Dashboard (7) |
+| **🎯 Total** | **3,090** | **32** | **Complete Coverage Across All Visualization Types** |
 
-| Category                          | Samples         | Subtypes     | All Subtypes (Count)                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| --------------------------------- | --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Single Visualization**    | 1,041           | 22           | Bar Chart (176) • Pie Chart (129) • Line Chart (100)``Area Chart (75) • Treemap (62) • Sankey Diagram (61)``Heatmap (55) • Scatter Plot (49) • Histogram (48)``Donut Chart (47) • Funnel Chart (45) • Bubble Chart (29)``Network Graph (28) • Word Cloud (27) • Waterfall Chart (24)``Box Plot (21) • Radar Chart (19) • Gauge Chart (16)``Sunburst Chart (14) • Violin Plot (12) • Parallel Coordinates (10)``Chord Diagram (9) |
-| **Multiple Visualizations** | 1,024           | 5            | Comparison Views (670) • Small Multiples (195) • Coordinated Views (97)``Other Multi View (59) • Overview Detail (3)                                                                                                                                                                                                                                                                                                                                                                  |
-| **Dashboard**               | 1,025           | 5            | Analytical Dashboard (743) • Operational Dashboard (122) • Interactive Dashboard (91)``Strategic Dashboard (62) • Other Dashboard (7)                                                                                                                                                                                                                                                                                                                                                 |
-| **🎯 Total**                | **3,090** | **32** | **Complete Coverage Across All Visualization Types**                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-
-</div>
-
-## Benchmark Results
+## 🏆 Benchmark Results
 
 We systematically evaluate multiple state-of-the-art multimodal large language models (MLLMs) on VisJudgeBench to assess their visualization quality assessment capabilities.
 
-### Can MLLMs Assess Visualization Quality and Aesthetics Like Humans?
+### 🤖 Can MLLMs Assess Visualization Quality and Aesthetics Like Humans?
 
 | Model              | MAE ↓          | MSE ↓          | Correlation ↑  |
 | ------------------ | --------------- | --------------- | --------------- |
@@ -133,7 +129,7 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 
 </details>
 
-### Do MLLMs Exhibit Human-like Scoring Behaviors?
+### 📊 Do MLLMs Exhibit Human-like Scoring Behaviors?
 
 <div align="center">
   <img src="figures/score_distribution_density_for_paper.jpg" alt="Score Distribution" width="90%">
@@ -146,7 +142,7 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 - **Overly Conservative**: Gemini-2.5-Pro (μ=3.02) tends to under-rate visualizations
 - **Perfect Alignment**: VisJudge (μ=3.11) achieves near-perfect alignment with human rating distribution (μ=3.13)
 
-### How Does Visualization Complexity Affect Model Performance?
+### 📈 How Does Visualization Complexity Affect Model Performance?
 
 <div align="center">
   <img src="figures/model_performance_comparison_radar.jpg" alt="Model Performance Radar Chart" width="90%">
@@ -159,7 +155,7 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 - VisJudge maintains the **best performance** across all types: 0.577 (Single), 0.565 (Multi), 0.375 (Dashboard)
 - **Aesthetic dimensions** (especially Visual Composition) are most challenging in complex dashboards
 
-### How Do Model Evaluation Behaviors Differ in Practice?
+### 🔍 How Do Model Evaluation Behaviors Differ in Practice?
 
 Our case studies reveal two common biases in model evaluation behaviors: **score inflation** and **overly conservative** assessments.
 
@@ -177,7 +173,7 @@ Our case studies reveal two common biases in model evaluation behaviors: **score
 
 **Overly Conservative:** Conversely, Gemini-2.5-Pro exhibits overly conservative bias. For a high-quality dashboard rated 4.17 by humans, Gemini-2.5-Pro gives a disproportionately low score of 2.94, focusing on a single data inconsistency while overlooking the chart's overall effectiveness. Similarly, for another chart (human rating: 3.56), it scores only 2.33 due to the use of dual Y-axes. VisJudge demonstrates more balanced evaluations (3.83 and 3.00, respectively).
 
-## Data Format
+## 📋 Data Format
 
 The dataset is stored in JSON format (`VisJudgeBench.json`), where each entry contains the following fields:
 
@@ -189,7 +185,7 @@ The dataset is stored in JSON format (`VisJudgeBench.json`), where each entry co
 - **`dimension_scores`**: Six-dimensional quality assessment scores (see Evaluation Framework above for detailed descriptions of each dimension)
 - **`prompt`**: Complete evaluation prompt with detailed scoring criteria for each dimension
 
-### Example Entry
+### 💡 Example Entry
 
 ```json
 {
