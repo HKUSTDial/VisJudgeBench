@@ -63,7 +63,7 @@ Our benchmark contains **3,090 expert-annotated samples** across three main cate
 
 | Category | Samples | Subtypes | All Subtypes (Count) |
 |----------|---------|----------|---------------------|
-| **Single Visualization** | 1,041 | 22 | Bar Chart (176) • Pie Chart (129) • Line Chart (100) • Area Chart (75) • Treemap (62) • Sankey Diagram (61) • Heatmap (55) • Scatter Plot (49) • Histogram (48) • Donut Chart (47) • Funnel Chart (45) • Bubble Chart (29) • Network Graph (28) • Word Cloud (27) • Waterfall Chart (24) • Box Plot (21) • Radar Chart (19) • Gauge Chart (16) • Sunburst Chart (14) • Violin Plot (12) • Parallel Coordinates (10) • Chord Diagram (9) |
+| **Single Visualization** | 1,041 | 22 | Bar Chart (176) • Pie Chart (129) • Line Chart (100) • Area Chart (75) • Treemap (62) • Sankey Diagram (61) • Heatmap (55) • Scatter Plot (49) • Histogram (48) • Donut Chart (47) • Funnel Chart (45) • Bubble Chart (29) • Choropleth Map (25) • Radar Chart (24) • Network Graph (23) • Candlestick Chart (20) • Gauge Chart (20) • Box Plot (17) • Point Map (12) • Word Cloud (1) • Violin Plot (1) • Other Single View (22) |
 | **Multiple Visualizations** | 1,024 | 5 | Comparison Views (670) • Small Multiples (195) • Coordinated Views (97) • Other Multi View (59) • Overview Detail (3) |
 | **Dashboard** | 1,025 | 5 | Analytical Dashboard (743) • Operational Dashboard (122) • Interactive Dashboard (91) • Strategic Dashboard (62) • Other Dashboard (7) |
 | **🎯 Total** | **3,090** | **32** | **Complete Coverage Across All Visualization Types** |
