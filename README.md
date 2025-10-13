@@ -4,7 +4,7 @@
 
 ## 🎯 About VisJudgeBench
 
-VisJudgeBench is a comprehensive benchmark dataset for visualization quality assessment based on the **"Fidelity-Expressiveness-Aesthetics"** evaluation framework. We release the complete dataset with **3,090 expert-annotated samples** collected from **real-world visualizations via web search engines**, covering three categories (`single_vis`, `multi_vis`, `dashboard`) and 32 distinct chart types. Each sample includes visualization images, six-dimensional quality scores, and evaluation prompts.
+VisJudgeBench is a comprehensive benchmark for evaluating MLLM visualization aesthetics and quality. It contains **3,090 expert-annotated samples from real-world scenarios**, covering single visualizations, multiple visualizations, and dashboards across **32 chart types**. Each sample includes visualization images, six-dimensional quality scores based on the **Fidelity-Expressiveness-Aesthetics** evaluation framework, and evaluation prompts.
 
 <div align="center">
   <img src="figures/abstract.jpg" alt="Research Motivation" width="100%">
