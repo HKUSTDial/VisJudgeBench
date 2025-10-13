@@ -16,7 +16,7 @@ VisJudgeBench is a comprehensive benchmark dataset for visualization quality ass
 Our benchmark evaluates visualizations across three fundamental dimensions, operationalized into six measurable metrics:
 
 <div align="center">
-  <img src="figures/evaluative_criteria.jpg" alt="Fidelity-Expressiveness-Aesthetics Framework" width="75%">
+  <img src="figures/evaluative_criteria.jpg" alt="Fidelity-Expressiveness-Aesthetics Framework" width="65%">
   <p><em>The Fidelity-Expressiveness-Aesthetics evaluation framework with positive and negative examples</em></p>
 </div>
 
@@ -74,6 +74,18 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 
 ### 🤖 Can MLLMs Assess Visualization Quality and Aesthetics Like Humans?
 
+**Quick Overview - Model Rankings by Overall Performance:**
+
+| Rank | Model | MAE (↓) | MSE (↓) | Correlation (↑) |
+|------|-------|---------|---------|-----------------|
+| 🥇 | **VisJudge** | **0.442** | **0.306** | **0.681** |
+| 🥈 | GPT-5 | 0.551 | 0.484 | 0.429 |
+| 🥉 | GPT-4o | 0.609 | 0.575 | 0.482 |
+| 4 | Claude-4-Sonnet | 0.618 | 0.596 | 0.470 |
+| 5 | Gemini-2.5-Pro | 0.661 | 0.674 | 0.266 |
+| 6 | Gemini-2.0-Flash | 0.680 | 0.716 | 0.395 |
+| 7 | Claude-3.5-Sonnet | 0.823 | 1.006 | 0.395 |
+| 8 | Qwen2.5-VL-7B | 1.048 | 1.502 | 0.322 |
 
 **Key Findings:**
 
@@ -89,48 +101,6 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
   - **19.8% MAE reduction** over GPT-5 (from 0.551 to 0.442)
   - **41.3% correlation improvement** over GPT-4o (from 0.482 to 0.681)
   - **Superior performance across all core metrics** with overall correlation of 0.681
-
-
-### 📊 Do MLLMs Exhibit Human-like Scoring Behaviors?
-
-<div align="center">
-  <img src="figures/score_distribution_density_for_paper.jpg" alt="Score Distribution" width="90%">
-  <p><em>Rating patterns of different models compared to human experts (μ<sub>human</sub>=3.13)</em></p>
-</div>
-
-**Systematic Biases Revealed:**
-
-- **Score Inflation**: Most models (Qwen2.5-VL-7B μ=3.89, Claude-3.5-Sonnet μ=3.87) tend to over-rate visualizations
-- **Overly Conservative**: Gemini-2.5-Pro (μ=3.02) tends to under-rate visualizations
-- **Perfect Alignment**: VisJudge (μ=3.11) achieves near-perfect alignment with human rating distribution (μ=3.13)
-
-### 📈 How Does Visualization Complexity Affect Model Performance?
-
-<div align="center">
-  <img src="figures/model_performance_comparison_radar.jpg" alt="Model Performance Radar Chart" width="90%">
-  <p><em>Model-human rating correlation across different visualization types and evaluation dimensions</em></p>
-</div>
-
-**Key Insights:**
-
-- All models show **performance degradation** as complexity increases: Single Vis > Multi Vis > Dashboard
-- VisJudge maintains the **best performance** across all types: 0.577 (Single), 0.565 (Multi), 0.375 (Dashboard)
-- **Aesthetic dimensions** (especially Visual Composition) are most challenging in complex dashboards
-
-### 📊 Performance Results
-
-**Quick Overview - Model Rankings by Overall Performance:**
-
-| Rank | Model | MAE (↓) | MSE (↓) | Correlation (↑) |
-|------|-------|---------|---------|-----------------|
-| 🥇 | **VisJudge** | **0.442** | **0.306** | **0.681** |
-| 🥈 | GPT-5 | 0.551 | 0.484 | 0.429 |
-| 🥉 | GPT-4o | 0.609 | 0.575 | 0.482 |
-| 4 | Claude-4-Sonnet | 0.618 | 0.596 | 0.470 |
-| 5 | Gemini-2.5-Pro | 0.661 | 0.674 | 0.266 |
-| 6 | Gemini-2.0-Flash | 0.680 | 0.716 | 0.395 |
-| 7 | Claude-3.5-Sonnet | 0.823 | 1.006 | 0.395 |
-| 8 | Qwen2.5-VL-7B | 1.048 | 1.502 | 0.322 |
 
 <details>
 <summary><strong>📋 Click to view detailed performance breakdown by dimensions</strong></summary>
@@ -173,232 +143,232 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 <td>0.618</td>
 <td>0.839</td>
 <td>0.757</td>
-<td>0.830</td>
-<td>0.678</td>
-<td>0.733</td>
-<td>0.785</td>
+<td>0.890</td>
+<td>0.606</td>
+<td>0.695</td>
+<td>0.704</td>
 </tr>
 <tr>
 <td>Gemini-2.0-Flash</td>
 <td>0.680</td>
 <td>0.828</td>
-<td>0.910</td>
-<td>0.818</td>
-<td>0.637</td>
-<td>0.728</td>
-<td>0.798</td>
+<td>0.920</td>
+<td>1.065</td>
+<td>0.640</td>
+<td>0.777</td>
+<td>0.797</td>
 </tr>
 <tr>
 <td>Gemini-2.5-Pro</td>
 <td>0.661</td>
-<td>1.241</td>
-<td>0.944</td>
-<td>0.898</td>
-<td>0.839</td>
-<td>0.918</td>
-<td>0.980</td>
+<td>0.856</td>
+<td>0.924</td>
+<td>1.058</td>
+<td>0.649</td>
+<td>0.756</td>
+<td>0.758</td>
 </tr>
 <tr>
 <td>GPT-4o</td>
 <td>0.609</td>
-<td>0.986</td>
-<td>0.804</td>
-<td>0.742</td>
-<td>0.608</td>
-<td>0.694</td>
+<td>0.859</td>
+<td>0.840</td>
+<td>0.966</td>
+<td>0.636</td>
+<td>0.699</td>
 <td>0.657</td>
 </tr>
 <tr>
 <td>GPT-5</td>
 <td>0.551</td>
-<td>0.861</td>
-<td>0.780</td>
-<td>0.776</td>
-<td>0.648</td>
-<td>0.698</td>
-<td>0.682</td>
+<td>0.839</td>
+<td>0.839</td>
+<td>0.839</td>
+<td>0.575</td>
+<td>0.655</td>
+<td>0.671</td>
 </tr>
 <tr>
 <td>Qwen2.5-VL-7B</td>
 <td>1.048</td>
-<td>1.169</td>
-<td>1.294</td>
-<td>0.857</td>
-<td>0.755</td>
-<td>0.812</td>
-<td>0.772</td>
+<td>1.129</td>
+<td>1.243</td>
+<td>1.454</td>
+<td>1.039</td>
+<td>1.192</td>
+<td>1.097</td>
 </tr>
 <tr>
 <td><strong>VisJudge</strong></td>
 <td><strong>0.442</strong></td>
-<td><strong>0.662</strong></td>
-<td><strong>0.649</strong></td>
-<td><strong>0.679</strong></td>
-<td><strong>0.581</strong></td>
-<td><strong>0.546</strong></td>
-<td><strong>0.604</strong></td>
+<td><strong>0.690</strong></td>
+<td><strong>0.718</strong></td>
+<td><strong>0.655</strong></td>
+<td><strong>0.472</strong></td>
+<td><strong>0.528</strong></td>
+<td><strong>0.567</strong></td>
 </tr>
 <tr>
 <td rowspan="8"><strong>MSE (↓)</strong></td>
 <td>Claude-3.5-Sonnet</td>
 <td>1.006</td>
-<td>1.573</td>
-<td>1.303</td>
-<td>1.982</td>
-<td>0.990</td>
-<td>1.463</td>
-<td>1.198</td>
+<td>1.386</td>
+<td>1.234</td>
+<td>1.910</td>
+<td>0.954</td>
+<td>1.311</td>
+<td>1.139</td>
 </tr>
 <tr>
 <td>Claude-4-Sonnet</td>
 <td>0.596</td>
-<td>1.180</td>
-<td>0.974</td>
-<td>1.142</td>
-<td>0.771</td>
-<td>0.932</td>
-<td>1.037</td>
+<td>1.032</td>
+<td>0.902</td>
+<td>1.198</td>
+<td>0.576</td>
+<td>0.749</td>
+<td>0.755</td>
 </tr>
 <tr>
 <td>Gemini-2.0-Flash</td>
 <td>0.716</td>
-<td>1.180</td>
-<td>1.323</td>
-<td>1.114</td>
-<td>0.671</td>
-<td>0.922</td>
-<td>1.057</td>
+<td>1.007</td>
+<td>1.310</td>
+<td>1.606</td>
+<td>0.632</td>
+<td>0.948</td>
+<td>0.991</td>
 </tr>
 <tr>
 <td>Gemini-2.5-Pro</td>
 <td>0.674</td>
-<td>2.287</td>
-<td>1.477</td>
-<td>1.360</td>
-<td>1.108</td>
-<td>1.322</td>
-<td>1.460</td>
+<td>1.070</td>
+<td>1.326</td>
+<td>1.637</td>
+<td>0.652</td>
+<td>0.894</td>
+<td>0.887</td>
 </tr>
 <tr>
 <td>GPT-4o</td>
 <td>0.575</td>
-<td>1.557</td>
-<td>1.060</td>
-<td>0.918</td>
-<td>0.625</td>
-<td>0.821</td>
-<td>0.729</td>
+<td>1.064</td>
+<td>1.082</td>
+<td>1.329</td>
+<td>0.622</td>
+<td>0.743</td>
+<td>0.653</td>
 </tr>
 <tr>
 <td>GPT-5</td>
 <td>0.484</td>
-<td>1.214</td>
-<td>0.988</td>
-<td>0.966</td>
-<td>0.719</td>
-<td>0.859</td>
-<td>0.810</td>
+<td>1.043</td>
+<td>1.053</td>
+<td>1.053</td>
+<td>0.517</td>
+<td>0.675</td>
+<td>0.710</td>
 </tr>
 <tr>
 <td>Qwen2.5-VL-7B</td>
 <td>1.502</td>
-<td>2.047</td>
-<td>2.409</td>
-<td>1.176</td>
-<td>0.937</td>
-<td>1.091</td>
-<td>0.996</td>
+<td>1.765</td>
+<td>2.091</td>
+<td>2.784</td>
+<td>1.486</td>
+<td>1.965</td>
+<td>1.646</td>
 </tr>
 <tr>
 <td><strong>VisJudge</strong></td>
 <td><strong>0.306</strong></td>
-<td><strong>0.751</strong></td>
-<td><strong>0.693</strong></td>
-<td><strong>0.762</strong></td>
-<td><strong>0.545</strong></td>
-<td><strong>0.498</strong></td>
-<td><strong>0.578</strong></td>
+<td><strong>0.720</strong></td>
+<td><strong>0.836</strong></td>
+<td><strong>0.678</strong></td>
+<td><strong>0.350</strong></td>
+<td><strong>0.421</strong></td>
+<td><strong>0.508</strong></td>
 </tr>
 <tr>
-<td rowspan="8"><strong>Corr. (↑)</strong></td>
+<td rowspan="8"><strong>Correlation (↑)</strong></td>
 <td>Claude-3.5-Sonnet</td>
 <td>0.395</td>
-<td>0.325</td>
-<td>0.491</td>
-<td>0.366</td>
-<td>0.456</td>
-<td>0.137</td>
-<td>0.259</td>
+<td>0.470</td>
+<td>0.373</td>
+<td>0.292</td>
+<td>0.377</td>
+<td>0.398</td>
+<td>0.291</td>
 </tr>
 <tr>
 <td>Claude-4-Sonnet</td>
 <td>0.470</td>
-<td>0.392</td>
-<td>0.548</td>
-<td>0.453</td>
-<td>0.422</td>
-<td>0.164</td>
-<td>0.228</td>
+<td>0.603</td>
+<td>0.484</td>
+<td>0.386</td>
+<td>0.407</td>
+<td>0.405</td>
+<td>0.375</td>
 </tr>
 <tr>
 <td>Gemini-2.0-Flash</td>
 <td>0.395</td>
-<td>0.371</td>
-<td>0.458</td>
-<td>0.418</td>
-<td>0.460</td>
-<td>0.157</td>
-<td>0.209</td>
+<td>0.612</td>
+<td>0.311</td>
+<td>0.225</td>
+<td>0.380</td>
+<td>0.396</td>
+<td>0.311</td>
 </tr>
 <tr>
 <td>Gemini-2.5-Pro</td>
 <td>0.266</td>
-<td>0.180</td>
-<td>0.379</td>
-<td>0.357</td>
-<td>0.447</td>
-<td>0.194</td>
-<td>0.208</td>
+<td>0.554</td>
+<td>0.207</td>
+<td>0.075</td>
+<td>0.242</td>
+<td>0.272</td>
+<td>0.187</td>
 </tr>
 <tr>
 <td>GPT-4o</td>
 <td>0.482</td>
-<td>0.382</td>
-<td>0.539</td>
+<td>0.598</td>
+<td>0.419</td>
+<td>0.338</td>
+<td>0.418</td>
 <td>0.442</td>
-<td>0.472</td>
-<td>0.277</td>
-<td>0.363</td>
+<td>0.407</td>
 </tr>
 <tr>
 <td>GPT-5</td>
 <td>0.429</td>
-<td>0.256</td>
-<td>0.438</td>
-<td>0.383</td>
-<td>0.463</td>
-<td>0.277</td>
-<td>0.295</td>
+<td>0.598</td>
+<td>0.398</td>
+<td>0.397</td>
+<td>0.352</td>
+<td>0.400</td>
+<td>0.357</td>
 </tr>
 <tr>
 <td>Qwen2.5-VL-7B</td>
 <td>0.322</td>
-<td>0.340</td>
-<td>0.349</td>
-<td>0.278</td>
-<td>0.356</td>
-<td>0.148</td>
-<td>0.155</td>
+<td>0.421</td>
+<td>0.255</td>
+<td>0.106</td>
+<td>0.280</td>
+<td>0.334</td>
+<td>0.220</td>
 </tr>
 <tr>
 <td><strong>VisJudge</strong></td>
 <td><strong>0.681</strong></td>
-<td><strong>0.571</strong></td>
-<td><strong>0.625</strong></td>
-<td><strong>0.572</strong></td>
+<td><strong>0.667</strong></td>
+<td><strong>0.579</strong></td>
 <td><strong>0.567</strong></td>
 <td><strong>0.512</strong></td>
 <td><strong>0.385</strong></td>
+<td><strong>0.496</strong></td>
 </tr>
 </tbody>
 </table>
@@ -407,13 +377,31 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 
 </details>
 
-**Key Performance Insights:**
+### 📊 Do MLLMs Exhibit Human-like Scoring Behaviors?
 
-- **Hierarchical Capability Structure:** Models perform relatively well on "Fidelity" dimensions, better on Insight Discovery (avg MAE 0.87) vs Semantic Readability (avg MAE 0.91), but struggle significantly with "Aesthetics" (avg MAE > 0.7, correlations < 0.4)
+<div align="center">
+  <img src="figures/score_distribution_density_for_paper.jpg" alt="Score Distribution" width="90%">
+  <p><em>Rating patterns of different models compared to human experts (μ<sub>human</sub>=3.13)</em></p>
+</div>
 
-- **Model-Specific Strengths:** GPT-5 shows balanced performance across dimensions; GPT-4o excels in Color Harmony (MAE 0.657); Claude-4-Sonnet leads in Semantic Readability (MAE 0.757); Gemini-2.0-Flash tops Data Fidelity (MAE 0.828)
+**Systematic Biases Revealed:**
 
-- **Domain Fine-tuning Impact:** VisJudge achieves superior performance with 19.8% MAE reduction over GPT-5 (0.551→0.442) and 41.3% correlation improvement over GPT-4o (0.482→0.681)
+- **Score Inflation**: Most models (Qwen2.5-VL-7B μ=3.89, Claude-3.5-Sonnet μ=3.87) tend to over-rate visualizations
+- **Overly Conservative**: Gemini-2.5-Pro (μ=3.02) tends to under-rate visualizations
+- **Perfect Alignment**: VisJudge (μ=3.11) achieves near-perfect alignment with human rating distribution (μ=3.13)
+
+### 📈 How Does Visualization Complexity Affect Model Performance?
+
+<div align="center">
+  <img src="figures/model_performance_comparison_radar.jpg" alt="Model Performance Radar Chart" width="90%">
+  <p><em>Model-human rating correlation across different visualization types and evaluation dimensions</em></p>
+</div>
+
+**Key Insights:**
+
+- All models show **performance degradation** as complexity increases: Single Vis > Multi Vis > Dashboard
+- VisJudge maintains the **best performance** across all types: 0.577 (Single), 0.565 (Multi), 0.375 (Dashboard)
+- **Aesthetic dimensions** (especially Visual Composition) are most challenging in complex dashboards
 
 ### 🔍 How Do Model Evaluation Behaviors Differ in Practice?
 
@@ -449,22 +437,99 @@ The dataset is stored in JSON format (`VisJudgeBench.json`), where each entry co
 
 ```json
 {
-  "_id": 1,
-  "type": "dashboard",
-  "subtype": "analytical_dashboard",
-  "image_path": "images/dashboard/example.png",
-  "overall_score": 3.75,
+  "_id": "0001_single_graph",
+  "type": "single_vis",
+  "subtype": "bar",
+  "image_path": "images/0001_single_graph.png",
+  "overall_score": 3.83,
   "dimension_scores": {
-    "data_fidelity": 4.0,
-    "semantic_readability": 4.5,
-    "insight_discovery": 3.5,
-    "design_style": 3.0,
-    "visual_composition": 4.0,
-    "color_harmony": 3.5
+    "data_fidelity": 4.00,
+    "semantic_readability": 4.00,
+    "insight_discovery": 4.00,
+    "design_style": 3.00,
+    "visual_composition": 4.33,
+    "color_harmony": 3.67
   },
-  "prompt": "..."
+  "prompt": "[Detailed evaluation prompt with scoring criteria]"
 }
 ```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+```bash
+pip install openai anthropic google-generativeai qwen_vl_utils
+```
+
+### Running Evaluations
+
+```python
+# Basic example using GPT-4o
+import json
+from openai import OpenAI
+
+client = OpenAI(api_key="your-api-key")
+
+# Load dataset
+with open('VisJudgeBench.json', 'r') as f:
+    dataset = json.load(f)
+
+# Evaluate single image
+sample = dataset[0]
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "user", "content": [
+            {"type": "image_url", "image_url": {"url": sample['image_path']}},
+            {"type": "text", "text": sample['prompt']}
+        ]}
+    ]
+)
+
+print(response.choices[0].message.content)
+```
+
+---
+
+## 📖 Citation
+
+If you find VisJudgeBench useful for your research, please cite our paper:
+
+```bibtex
+@article{visjudgebench2025,
+  title={VisJudgeBench: A Benchmark for Evaluating Visualization Quality Assessment Capabilities of Multimodal Large Language Models},
+  author={[Authors]},
+  journal={arXiv preprint},
+  year={2025}
+}
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+---
+
+## 📧 Contact
+
+For questions or collaborations, please contact: [your-email@example.com]
+
+---
+
+<div align="center">
+  <strong>VisJudgeBench</strong> - Advancing Visualization Quality Assessment with Multimodal AI
+</div>
 
 ---
 
