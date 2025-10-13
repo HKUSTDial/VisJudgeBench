@@ -1,6 +1,6 @@
 # VisJudgeBench
 
-**VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations**
+**VisJudgeBench: Aesthetics and Quality Assessment of Visualizations**
 
 ## About VisJudgeBench
 
@@ -75,19 +75,6 @@ The dataset is stored in JSON format (`VisJudgeBench.json`), where each entry co
     "color_harmony": 3.5
   },
   "prompt": "..."
-}
-```
-
-## Citation
-
-If you use VisJudgeBench in your research, please cite:
-
-```bibtex
-@article{visjudgebench2025,
-  title={VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations},
-  author={Your Name and Others},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2025}
 }
 ```
 
