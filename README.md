@@ -117,12 +117,28 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 - VisJudge maintains the **best performance** across all types: 0.577 (Single), 0.565 (Multi), 0.375 (Dashboard)
 - **Aesthetic dimensions** (especially Visual Composition) are most challenging in complex dashboards
 
-### 📊 Detailed Performance Results
+### 📊 Performance Results
+
+**Quick Overview - Model Rankings by Overall Performance:**
+
+| Rank | Model | MAE (↓) | MSE (↓) | Correlation (↑) |
+|------|-------|---------|---------|-----------------|
+| 🥇 | **VisJudge** | **0.442** | **0.306** | **0.681** |
+| 🥈 | GPT-5 | 0.551 | 0.484 | 0.429 |
+| 🥉 | GPT-4o | 0.609 | 0.575 | 0.482 |
+| 4 | Claude-4-Sonnet | 0.618 | 0.596 | 0.470 |
+| 5 | Gemini-2.5-Pro | 0.661 | 0.674 | 0.266 |
+| 6 | Gemini-2.0-Flash | 0.680 | 0.716 | 0.395 |
+| 7 | Claude-3.5-Sonnet | 0.823 | 1.006 | 0.395 |
+| 8 | Qwen2.5-VL-7B | 1.048 | 1.502 | 0.322 |
+
+<details>
+<summary><strong>📋 Click to view detailed performance breakdown by dimensions</strong></summary>
 
 <div align="center">
 
 <table>
-<caption><strong>Overall performance of MLLMs and VisJudge on VisJudge-Bench across different evaluation metrics and dimensions</strong></caption>
+<caption><strong>Comprehensive performance of MLLMs and VisJudge across all evaluation metrics and dimensions</strong></caption>
 <thead>
 <tr>
 <th rowspan="2"><strong>Metric</strong></th>
@@ -388,6 +404,8 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 </table>
 
 </div>
+
+</details>
 
 **Key Performance Insights:**
 
