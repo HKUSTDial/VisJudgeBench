@@ -74,60 +74,36 @@ We systematically evaluate multiple state-of-the-art multimodal large language m
 
 ### 🤖 Can MLLMs Assess Visualization Quality and Aesthetics Like Humans?
 
-| Model              | MAE ↓          | MSE ↓          | Correlation ↑  |
-| ------------------ | --------------- | --------------- | --------------- |
-| **VisJudge** | **0.442** | **0.306** | **0.681** |
-| GPT-5              | 0.551           | 0.484           | 0.429           |
-| GPT-4o             | 0.609           | 0.575           | 0.482           |
-| Claude-4-Sonnet    | 0.618           | 0.596           | 0.470           |
-| Gemini-2.0-Flash   | 0.680           | 0.716           | 0.395           |
-| Gemini-2.5-Pro     | 0.661           | 0.674           | 0.266           |
-| Claude-3.5-Sonnet  | 0.823           | 1.006           | 0.395           |
-| Qwen2.5-VL-7B      | 1.048           | 1.502           | 0.322           |
+#### Overall Performance Comparison
+
+| Model | Overall |  | | **Fidelity** | **Expressiveness** |  | **Aesthetics** |  |  |
+|-------|---------|--|--|--------------|-------------------|--|----------------|--|--|
+|       | **MAE ↓** | **Corr ↑** | | **Data Fidelity** | **Semantic Readability** | **Insight Discovery** | **Design Style** | **Visual Composition** | **Color Harmony** |
+|       |         |           | | MAE ↓ / Corr ↑ | MAE ↓ / Corr ↑ | MAE ↓ / Corr ↑ | MAE ↓ / Corr ↑ | MAE ↓ / Corr ↑ | MAE ↓ / Corr ↑ |
+| **VisJudge** | **0.442** | **0.681** | | **0.662** / **0.571** | **0.649** / **0.625** | **0.679** / **0.572** | **0.581** / **0.567** | **0.546** / **0.512** | **0.604** / **0.385** |
+| GPT-5 | 0.551 | 0.429 | | 0.861 / 0.256 | 0.780 / 0.438 | 0.776 / 0.383 | 0.648 / 0.463 | 0.698 / 0.277 | 0.682 / 0.295 |
+| GPT-4o | 0.609 | 0.482 | | 0.986 / 0.382 | 0.804 / 0.539 | 0.742 / 0.442 | 0.608 / 0.472 | 0.694 / 0.277 | 0.657 / 0.363 |
+| Claude-4-Sonnet | 0.618 | 0.470 | | 0.839 / 0.392 | 0.757 / 0.548 | 0.830 / 0.453 | 0.678 / 0.422 | 0.733 / 0.164 | 0.785 / 0.228 |
+| Gemini-2.0-Flash | 0.680 | 0.395 | | 0.828 / 0.371 | 0.910 / 0.458 | 0.818 / 0.418 | 0.637 / 0.460 | 0.728 / 0.157 | 0.798 / 0.209 |
+| Gemini-2.5-Pro | 0.661 | 0.266 | | 1.241 / 0.180 | 0.944 / 0.379 | 0.898 / 0.357 | 0.839 / 0.447 | 0.918 / 0.194 | 0.980 / 0.208 |
+| Claude-3.5-Sonnet | 0.823 | 0.395 | | 0.977 / 0.325 | 0.902 / 0.491 | 1.152 / 0.366 | 0.782 / 0.456 | 0.939 / 0.137 | 0.862 / 0.259 |
+| Qwen2.5-VL-7B | 1.048 | 0.322 | | 1.169 / 0.340 | 1.294 / 0.349 | 0.857 / 0.278 | 0.755 / 0.356 | 0.812 / 0.148 | 0.772 / 0.155 |
 
 **Key Findings:**
 
-- 🎯 **VisJudge achieves 19.8% MAE improvement** over GPT-5 (from 0.551 to 0.442)
-- 📈 **VisJudge shows 58.7% higher correlation** with human experts compared to GPT-5 (from 0.429 to 0.681)
-- 🏅 **Outperforms all commercial MLLMs** across all metrics on visualization assessment tasks
-- 📊 Even the most advanced models (GPT-5) show significant gaps compared to human expert judgment
+- 🏗️ **Hierarchical Capability Structure**: Models perform relatively well on **Fidelity** dimensions, moderately on **Expressiveness** dimensions, but struggle significantly with **Aesthetics** dimensions (average MAE >0.7, correlations <0.4)
 
-<details>
-<summary>📊 View detailed performance by evaluation dimensions</summary>
+- 🤖 **Model-Specific Evaluation Characteristics**: Each model exhibits distinct "evaluation personalities":
+  - **GPT-5**: Balanced performance with competitive overall accuracy
+  - **GPT-4o**: Relative strength in Color Harmony assessment (MAE 0.657)
+  - **Claude-4-Sonnet**: Excels in Semantic Readability evaluation (MAE 0.757)
+  - **Gemini-2.0-Flash**: Leads in Data Fidelity assessment (MAE 0.828)
 
-### Performance by Evaluation Dimensions (MAE ↓)
+- 🎯 **Domain-Specific Fine-tuning Effectiveness**: VisJudge demonstrates substantial improvements:
+  - **19.8% MAE reduction** over GPT-5 (from 0.551 to 0.442)
+  - **41.3% correlation improvement** over GPT-4o (from 0.482 to 0.681)
+  - **Superior performance across all core metrics** with overall correlation of 0.681
 
-| Model              | Overall         | Data Fidelity   | Semantic Readability | Insight Discovery | Design Style    | Visual Composition | Color Harmony   |
-| ------------------ | --------------- | --------------- | -------------------- | ----------------- | --------------- | ------------------ | --------------- |
-| **VisJudge** | **0.442** | **0.662** | **0.649**      | **0.679**   | **0.581** | **0.546**    | **0.604** |
-| GPT-5              | 0.551           | 0.861           | 0.780                | 0.776             | 0.648           | 0.698              | 0.682           |
-| GPT-4o             | 0.609           | 0.986           | 0.804                | 0.742             | 0.608           | 0.694              | 0.657           |
-| Claude-4-Sonnet    | 0.618           | 0.839           | 0.757                | 0.830             | 0.678           | 0.733              | 0.785           |
-| Gemini-2.0-Flash   | 0.680           | 0.828           | 0.910                | 0.818             | 0.637           | 0.728              | 0.798           |
-| Gemini-2.5-Pro     | 0.661           | 1.241           | 0.944                | 0.898             | 0.839           | 0.918              | 0.980           |
-| Claude-3.5-Sonnet  | 0.823           | 0.977           | 0.902                | 1.152             | 0.782           | 0.939              | 0.862           |
-| Qwen2.5-VL-7B      | 1.048           | 1.169           | 1.294                | 0.857             | 0.755           | 0.812              | 0.772           |
-
-### Performance by Evaluation Dimensions (Correlation ↑)
-
-| Model              | Overall         | Data Fidelity   | Semantic Readability | Insight Discovery | Design Style    | Visual Composition | Color Harmony   |
-| ------------------ | --------------- | --------------- | -------------------- | ----------------- | --------------- | ------------------ | --------------- |
-| **VisJudge** | **0.681** | **0.571** | **0.625**      | **0.572**   | **0.567** | **0.512**    | **0.385** |
-| GPT-5              | 0.429           | 0.256           | 0.438                | 0.383             | 0.463           | 0.277              | 0.295           |
-| GPT-4o             | 0.482           | 0.382           | 0.539                | 0.442             | 0.472           | 0.277              | 0.363           |
-| Claude-4-Sonnet    | 0.470           | 0.392           | 0.548                | 0.453             | 0.422           | 0.164              | 0.228           |
-| Gemini-2.0-Flash   | 0.395           | 0.371           | 0.458                | 0.418             | 0.460           | 0.157              | 0.209           |
-| Gemini-2.5-Pro     | 0.266           | 0.180           | 0.379                | 0.357             | 0.447           | 0.194              | 0.208           |
-| Claude-3.5-Sonnet  | 0.395           | 0.325           | 0.491                | 0.366             | 0.456           | 0.137              | 0.259           |
-| Qwen2.5-VL-7B      | 0.322           | 0.340           | 0.349                | 0.278             | 0.356           | 0.148              | 0.155           |
-
-**Observations:**
-
-- All models struggle most with **Aesthetics dimensions** (Design Style, Visual Composition, Color Harmony)
-- **Data Fidelity** is relatively easier but still challenging for most models
-- **VisJudge consistently outperforms** baseline models across all six dimensions
-
-</details>
 
 ### 📊 Do MLLMs Exhibit Human-like Scoring Behaviors?
 
