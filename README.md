@@ -4,7 +4,7 @@
 
 ## 🎯 About VisJudgeBench
 
-VisJudgeBench is a comprehensive benchmark dataset for visualization quality assessment based on the **"Fidelity-Expressiveness-Aesthetics"** evaluation framework. We release the complete dataset with **3,090 expert-annotated samples** across three categories (`single_vis`, `multi_vis`, `dashboard`), where each sample includes visualization images, six-dimensional quality scores, and evaluation prompts.
+VisJudgeBench is a comprehensive benchmark dataset for visualization quality assessment based on the **"Fidelity-Expressiveness-Aesthetics"** evaluation framework. We release the complete dataset with **3,090 expert-annotated samples** collected from **real-world visualizations via web search engines**, covering three categories (`single_vis`, `multi_vis`, `dashboard`) and 32 distinct chart types. Each sample includes visualization images, six-dimensional quality scores, and evaluation prompts.
 
 <div align="center">
   <img src="figures/abstract.jpg" alt="Research Motivation" width="100%">
@@ -59,7 +59,7 @@ VisJudgeBench/
 
 ## 📈 Dataset Statistics
 
-Our benchmark contains **3,090 expert-annotated samples** across three main categories and **32 distinct subtypes**:
+Our benchmark contains **3,090 expert-annotated samples** collected from real-world visualizations via web search engines, covering three main categories and **32 distinct subtypes**:
 
 | Category | Samples | Subtypes | All Subtypes (Count) |
 |----------|---------|----------|---------------------|
@@ -70,7 +70,9 @@ Our benchmark contains **3,090 expert-annotated samples** across three main cate
 
 ## 🏆 Benchmark Results
 
-We systematically evaluate multiple state-of-the-art multimodal large language models (MLLMs) on VisJudgeBench to assess their visualization quality assessment capabilities.
+We systematically evaluate multiple state-of-the-art multimodal large language models (MLLMs) on VisJudgeBench to assess their visualization quality assessment capabilities. 
+
+**About VisJudge:** To address the significant gaps between general MLLMs and human expert judgment, we developed **VisJudge**, a specialized model fine-tuned on our benchmark data using the GRPO (Group Relative Policy Optimization) method. VisJudge is based on Qwen2.5-VL-7B-Instruct and trained specifically for visualization quality assessment across the Fidelity-Expressiveness-Aesthetics dimensions.
 
 ### 🤖 Can MLLMs Assess Visualization Quality and Aesthetics Like Humans?
 
