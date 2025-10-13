@@ -16,7 +16,7 @@ VisJudgeBench is a comprehensive benchmark for evaluating MLLM visualization aes
 Our benchmark evaluates visualizations across three fundamental dimensions, operationalized into six measurable metrics:
 
 <div align="center">
-  <img src="figures/evaluative_criteria.jpg" alt="Fidelity-Expressiveness-Aesthetics Framework" width="75%">
+  <img src="figures/evaluative_criteria.jpg" alt="Fidelity-Expressiveness-Aesthetics Framework" width="65%">
   <p><em>The Fidelity-Expressiveness-Aesthetics evaluation framework with positive and negative examples</em></p>
 </div>
 
