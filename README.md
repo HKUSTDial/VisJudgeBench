@@ -2,6 +2,8 @@
 
 **VisJudgeBench: Aesthetics and Quality Assessment of Visualizations**
 
+📄 **Paper**: [https://arxiv.org/abs/2510.22373](https://arxiv.org/abs/2510.22373)
+
 ## 🎯 About VisJudgeBench
 
 VisJudgeBench is a comprehensive benchmark for evaluating MLLM visualization aesthetics and quality. It contains **3,090 expert-annotated samples from real-world scenarios**, covering single visualizations, multiple visualizations, and dashboards across **32 chart types**. Each sample includes visualization images, six-dimensional quality scores based on the **Fidelity-Expressiveness-Aesthetics** evaluation framework, and evaluation prompts.
@@ -202,6 +204,24 @@ The dataset is stored in JSON format (`VisJudgeBench.json`), where each entry co
   "prompt": "..."
 }
 ```
+
+## 📝 Citation
+
+If you find VisJudgeBench useful for your research, please cite our paper:
+
+```bibtex
+@misc{xie2025visjudge,
+      title={VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations}, 
+      author={Yupeng Xie and Zhiyang Zhang and Yifan Wu and Sirong Lu and Jiayi Zhang and Zhaoyang Yu and Jinlin Wang and Sirui Hong and Bang Liu and Chenglin Wu and Yuyu Luo},
+      year={2025},
+      eprint={2510.22373},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.22373}, 
+}
+```
+
+**Paper:** [https://arxiv.org/abs/2510.22373](https://arxiv.org/abs/2510.22373)
 
 ---
 
