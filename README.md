@@ -5,14 +5,18 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2510.22373-b31b1b.svg)](https://arxiv.org/abs/2510.22373)
 [![Model](https://img.shields.io/badge/🤗_HuggingFace-VisJudge_7B-ffc107.svg)](https://huggingface.co/xypkent/visjudge-7b)
 
-📄 **Paper**: [https://arxiv.org/abs/2510.22373](https://arxiv.org/abs/2510.22373)  
-🤖 **Model**: [https://huggingface.co/xypkent/visjudge-7b](https://huggingface.co/xypkent/visjudge-7b)
-
 ## 📰 News
 
 - **[2026-02]** 🎉 Our paper has been **accepted to ICLR 2026**!
 - **[2025-10]** 🤖 **VisJudge-7B** model released on [HuggingFace](https://huggingface.co/xypkent/visjudge-7b)
 - **[2025-10]** 📊 **VisJudgeBench** dataset released with 3,090 expert-annotated samples
+
+## 📋 Project Roadmap
+
+- [x] Release VisJudgeBench dataset (3,090 samples)
+- [x] Release VisJudge-7B model on HuggingFace
+- [ ] Release raw evaluation scores
+- [ ] Launch demo website
 
 ## 🎯 About VisJudgeBench
 
