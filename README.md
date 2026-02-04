@@ -8,6 +8,12 @@
 📄 **Paper**: [https://arxiv.org/abs/2510.22373](https://arxiv.org/abs/2510.22373)  
 🤖 **Model**: [https://huggingface.co/xypkent/visjudge-7b](https://huggingface.co/xypkent/visjudge-7b)
 
+## 📰 News
+
+- **[2026-02]** 🎉 Our paper has been **accepted to ICLR 2026**!
+- **[2025-10]** 🤖 **VisJudge-7B** model released on [HuggingFace](https://huggingface.co/xypkent/visjudge-7b)
+- **[2025-10]** 📊 **VisJudgeBench** dataset released with 3,090 expert-annotated samples
+
 ## 🎯 About VisJudgeBench
 
 VisJudgeBench is a comprehensive benchmark for evaluating MLLM visualization aesthetics and quality. It contains **3,090 expert-annotated samples from real-world scenarios**, covering single visualizations, multiple visualizations, and dashboards across **32 chart types**. Each sample includes visualization images, six-dimensional quality scores based on the **Fidelity-Expressiveness-Aesthetics** evaluation framework, and evaluation prompts.
